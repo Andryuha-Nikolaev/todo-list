@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import s from './TodoForm.module.scss';
+import btnImg from '../../../assets/img/todo-submit-btn-img.svg';
 
 interface ITodoForm {
   onSubmit: (todo: string) => void;
@@ -14,11 +16,17 @@ const TodoForm = ({ onSubmit }: ITodoForm) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={newTodo} onChange={(e) => setNewTodo(e.target.value)} />
-      <button disabled={!newTodo.length} type="submit">
-        Add Todo
+    <form className={s['form']} onSubmit={handleSubmit}>
+      <button className={s['btn']} disabled={!newTodo.length} type="submit">
+        <div className={s['img']}></div>
       </button>
+      <input
+        placeholder="What needs to be done?"
+        className={s['input']}
+        type="text"
+        value={newTodo}
+        onChange={(e) => setNewTodo(e.target.value)}
+      />
     </form>
   );
 };
