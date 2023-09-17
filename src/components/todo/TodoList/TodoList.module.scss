@@ -1,3 +1,47 @@
+@import '../../../scss/variables';
+
+.block {
+  position: relative;
+}
+
+.wrap {
+  position: relative;
+  background-color: $white;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px;
+  border-bottom: 1px solid $background;
+  padding: 10px;
+
+  min-height: 25vh;
+}
+
+.background {
+  position: absolute;
+  display: block;
+  width: 98%;
+  margin: 0 auto;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 5px;
+  background-color: $white;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 10px;
+  border-bottom: 1px solid $background;
+}
+
+.background2 {
+  position: absolute;
+  display: block;
+  width: 96%;
+  margin: 0 auto;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 10px;
+  background-color: $white;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 10px;
+  border-bottom: 1px solid $background;
+}
+
 .list {
   display: flex;
   flex-direction: column;

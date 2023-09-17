@@ -61,29 +61,34 @@ const TodoList = () => {
   };
 
   return (
-    <div>
-      <TodoForm onSubmit={handleNewTodo} />
-      <ul className={s['list']}>
-        {todos
-          .filter(filters[todosFilter])
-          // .sort((a, b) => Number(a.isCompleted) - Number(b.isCompleted))
-          .map((item, index) => (
-            <TodoItem key={`todo-item-${index}`} item={item} index={index} onClick={toggleTodo} />
-          ))}
-      </ul>
-      <div>
-        <TodoCount itemsLeft={uncompletedTodos.length} />
+    <div className={s['block']}>
+      <div className={s['background2']} />
+      <div className={s['background']} />
+
+      <div className={s['wrap']}>
+        <TodoForm onSubmit={handleNewTodo} />
+        <ul className={s['list']}>
+          {todos
+            .filter(filters[todosFilter])
+            // .sort((a, b) => Number(a.isCompleted) - Number(b.isCompleted))
+            .map((item, index) => (
+              <TodoItem key={`todo-item-${index}`} item={item} index={index} onClick={toggleTodo} />
+            ))}
+        </ul>
         <div>
-          {Object.keys(filters).map((filterName) => (
-            <TodoFilterBtn
-              key={`filter-name-${filterName}`}
-              onClick={handleFilter}
-              filterName={filterName}
-              active={filterName === todosFilter}
-            />
-          ))}
+          <TodoCount itemsLeft={uncompletedTodos.length} />
+          <div>
+            {Object.keys(filters).map((filterName) => (
+              <TodoFilterBtn
+                key={`filter-name-${filterName}`}
+                onClick={handleFilter}
+                filterName={filterName}
+                active={filterName === todosFilter}
+              />
+            ))}
+          </div>
+          <ClearCompletedBtn onClick={handleClearCompleted} />
         </div>
-        <ClearCompletedBtn onClick={handleClearCompleted} />
       </div>
     </div>
   );
