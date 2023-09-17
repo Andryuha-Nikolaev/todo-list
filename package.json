@@ -1,6 +1,6 @@
 {
   "name": "react-ts-scss",
-  "homepage": "https://andryuha-nikolaev.github.io/todo-list/",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

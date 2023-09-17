@@ -19,3 +19,9 @@ npm run start
 ```shell
 npm run build
 ```
+
+### Деплой на gh-pages
+
+```shell
+npm run deploy
+```
