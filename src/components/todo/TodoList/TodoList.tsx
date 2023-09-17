@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 
 import TodoForm from '../TodoForm/TodoForm';
 import TodoItem from '../TodoItem/TodoItem';
@@ -11,6 +11,13 @@ type Todo = {
 const TodoList = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
+  const notCompletedTodos = useMemo(
+    () => todos.filter((item) => item.isCompleted === false),
+    [todos],
+  );
+
+  console.log(notCompletedTodos);
+
   const handleNewTodo = (todo: string) => {
     const trimTodo = todo.trim();
     if (trimTodo.length) {
@@ -18,7 +25,6 @@ const TodoList = () => {
     }
     // setTodos([...todos, { text: todo, isCompleted: false }]);
   };
-  console.log(todos);
 
   // Обработчик для пометки выполненного дела
   const toggleTodo = (index: number) => {
@@ -42,6 +48,9 @@ const TodoList = () => {
             <TodoItem key={`todo-item-${index}`} item={item} index={index} onClick={toggleTodo} />
           ))}
       </ul>
+      <div>
+        <div>{notCompletedTodos.length} items left</div>
+      </div>
     </div>
   );
 };
