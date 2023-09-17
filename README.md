@@ -29,3 +29,9 @@ npm run build
 ```shell
 npm run deploy
 ```
+
+### Запуск тестов
+
+```shell
+npm test
+```

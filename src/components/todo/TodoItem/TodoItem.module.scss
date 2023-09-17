@@ -1,18 +1,17 @@
 @import '../../../scss/variables';
 
 .item {
-  // min-height: 50px;
   border-bottom: 1px solid $gray;
   display: flex;
   align-items: center;
-
-  overflow-y: auto;
-  padding: 12px 0;
+  padding: 12px 10px 12px 0;
 }
 
 .text {
   font-size: 18px;
   line-height: 1.2;
+  word-wrap: break-word;
+  width: calc(100% - 50px);
 
   &.completed {
     color: $gray;
