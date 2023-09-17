@@ -2,7 +2,7 @@
 
 .item {
   // min-height: 50px;
-  border-bottom: 1px solid $background;
+  border-bottom: 1px solid $gray;
   display: flex;
   align-items: center;
 
@@ -15,7 +15,7 @@
   line-height: 1.2;
 
   &.completed {
-    color: $background;
+    color: $gray;
     text-decoration: line-through;
   }
 }
@@ -25,7 +25,7 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 1px solid $background;
+  border: 1px solid $gray;
   flex-shrink: 0;
   margin: 0 10px;
   cursor: pointer;

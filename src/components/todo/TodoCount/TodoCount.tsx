@@ -1,11 +1,15 @@
-import React from 'react';
+import s from './TodoCount.module.scss';
 
 interface ITodoCount {
   itemsLeft: number;
 }
 
 const TodoCount = ({ itemsLeft }: ITodoCount) => {
-  return <div>{itemsLeft} items left</div>;
+  return (
+    <div className={s['wrap']}>
+      <p>{itemsLeft} items left</p>
+    </div>
+  );
 };
 
 export default TodoCount;

@@ -34,14 +34,16 @@ const TodoList = () => {
 
   console.log(todosFilter);
 
-  const uncompletedTodos = useMemo(
-    () => todos.filter((item) => item.isCompleted === false),
-    [todos],
-  );
+  const uncompletedTodos = useMemo(() => todos.filter((item) => !item.isCompleted), [todos]);
+
+  const completedTodos = useMemo(() => todos.filter((item) => item.isCompleted), [todos]);
 
   const handleNewTodo = (todo: string) => {
     const trimTodo = todo.trim();
     if (trimTodo.length) {
+      if (todosFilter === 'Completed') {
+        setTodosFilter('All');
+      }
       setTodos((prevTodos) => [{ text: trimTodo, isCompleted: false }, ...prevTodos]);
     }
   };
@@ -75,9 +77,9 @@ const TodoList = () => {
               <TodoItem key={`todo-item-${index}`} item={item} index={index} onClick={toggleTodo} />
             ))}
         </ul>
-        <div>
+        <div className={s['bottom-wrap']}>
           <TodoCount itemsLeft={uncompletedTodos.length} />
-          <div>
+          <div className={s['btns-wrap']}>
             {Object.keys(filters).map((filterName) => (
               <TodoFilterBtn
                 key={`filter-name-${filterName}`}
@@ -87,7 +89,10 @@ const TodoList = () => {
               />
             ))}
           </div>
-          <ClearCompletedBtn onClick={handleClearCompleted} />
+          <ClearCompletedBtn
+            completedItems={completedTodos.length}
+            onClick={handleClearCompleted}
+          />
         </div>
       </div>
     </div>

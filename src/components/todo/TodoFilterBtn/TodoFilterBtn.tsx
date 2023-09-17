@@ -1,4 +1,5 @@
-import React from 'react';
+import s from './TodoFilterBtn.module.scss';
+import classNames from 'classnames';
 
 interface ITodoFilterBtn {
   filterName: string;
@@ -7,7 +8,13 @@ interface ITodoFilterBtn {
 }
 
 const TodoFilterBtn = ({ filterName, onClick, active }: ITodoFilterBtn) => {
-  return <button onClick={() => onClick(filterName)}>{filterName}</button>;
+  return (
+    <button
+      className={classNames(s['btn'], active && s['active'])}
+      onClick={() => onClick(filterName)}>
+      {filterName}
+    </button>
+  );
 };
 
 export default TodoFilterBtn;
