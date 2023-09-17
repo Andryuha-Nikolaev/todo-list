@@ -7,7 +7,11 @@ interface IClearCompletedBtn {
 
 const ClearCompletedBtn = ({ onClick, completedItems }: IClearCompletedBtn) => {
   return (
-    <button className={s['btn']} disabled={completedItems === 0} onClick={onClick}>
+    <button
+      data-testid="todo-clear-btn"
+      className={s['btn']}
+      disabled={completedItems === 0}
+      onClick={onClick}>
       Clear completed
     </button>
   );

@@ -32,8 +32,6 @@ const TodoList = () => {
     setTodosFilter(filterName);
   };
 
-  console.log(todosFilter);
-
   const uncompletedTodos = useMemo(() => todos.filter((item) => !item.isCompleted), [todos]);
 
   const completedTodos = useMemo(() => todos.filter((item) => item.isCompleted), [todos]);

@@ -17,10 +17,15 @@ const TodoForm = ({ onSubmit }: ITodoForm) => {
 
   return (
     <form className={s['form']} onSubmit={handleSubmit}>
-      <button className={s['btn']} disabled={!newTodo.length} type="submit">
+      <button
+        data-testid="todo-submit-btn"
+        className={s['btn']}
+        disabled={!newTodo.length}
+        type="submit">
         <div className={s['img']}></div>
       </button>
       <input
+        data-testid="todo-form-input"
         placeholder="What needs to be done?"
         className={s['input']}
         type="text"
