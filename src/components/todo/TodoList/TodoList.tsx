@@ -42,7 +42,7 @@ const TodoList = () => {
   const handleNewTodo = (todo: string) => {
     const trimTodo = todo.trim();
     if (trimTodo.length) {
-      setTodos((prevTodos) => [...prevTodos, { text: trimTodo, isCompleted: false }]);
+      setTodos((prevTodos) => [{ text: trimTodo, isCompleted: false }, ...prevTodos]);
     }
   };
 

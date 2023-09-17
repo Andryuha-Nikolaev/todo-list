@@ -14,10 +14,11 @@ const TodoItem = ({ item, index, onClick }: ITodoItem) => {
   const { text, isCompleted } = item;
 
   return (
-    <li
-      onClick={() => onClick(index)}
-      className={classnames(s['item'], isCompleted && s['completed'])}>
-      {text} {isCompleted && 'выполнено'}
+    <li className={classnames(s['item'], isCompleted && s['completed'])}>
+      <div
+        onClick={() => onClick(index)}
+        className={classnames(s['icon'], isCompleted && s['completed'])}></div>
+      <p className={classnames(s['text'], isCompleted && s['completed'])}>{text}</p>
     </li>
   );
 };

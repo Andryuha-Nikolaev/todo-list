@@ -9,9 +9,9 @@
   background-color: $white;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px;
   border-bottom: 1px solid $background;
-  padding: 0 10px;
+  // padding: 0 10px;
 
-  min-height: 25vh;
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
 }
@@ -47,6 +47,7 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  // gap: 10px;
   flex-grow: 1;
+  margin-bottom: 20px;
 }
