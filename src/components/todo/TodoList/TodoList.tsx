@@ -68,12 +68,19 @@ const TodoList = () => {
       <div className={s['wrap']}>
         <TodoForm onSubmit={handleNewTodo} />
         <ul className={s['list']}>
-          {todos
-            .filter(filters[todosFilter])
-            // .sort((a, b) => Number(a.isCompleted) - Number(b.isCompleted))
-            .map((item, index) => (
-              <TodoItem key={`todo-item-${index}`} item={item} index={index} onClick={toggleTodo} />
-            ))}
+          {todos.filter(filters[todosFilter]).map((item) => {
+            // Найдем индекс элемента в исходном массиве todos
+            const realIndex = todos.indexOf(item);
+
+            return (
+              <TodoItem
+                key={`todo-item-${realIndex}`}
+                item={item}
+                index={realIndex}
+                onClick={toggleTodo}
+              />
+            );
+          })}
         </ul>
         <div className={s['bottom-wrap']}>
           <TodoCount itemsLeft={uncompletedTodos.length} />
