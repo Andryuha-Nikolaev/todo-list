@@ -69,7 +69,6 @@ const TodoList = () => {
         <TodoForm onSubmit={handleNewTodo} />
         <ul className={s['list']}>
           {todos.filter(filters[todosFilter]).map((item) => {
-            // Найдем индекс элемента в исходном массиве todos
             const realIndex = todos.indexOf(item);
 
             return (
