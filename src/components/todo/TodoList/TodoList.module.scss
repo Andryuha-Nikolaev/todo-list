@@ -11,7 +11,6 @@
   border-bottom: 1px solid $gray;
   // padding: 0 10px;
 
-  min-height: 40vh;
   display: flex;
   flex-direction: column;
 }
@@ -24,7 +23,7 @@
   height: 100%;
   left: 0;
   right: 0;
-  top: 5px;
+  top: 6px;
   background-color: $white;
   box-shadow: rgba(0, 0, 0, 0.2) 0 0 10px;
   border-bottom: 1px solid $gray;
@@ -38,7 +37,7 @@
   height: 100%;
   left: 0;
   right: 0;
-  top: 10px;
+  top: 12px;
   background-color: $white;
   box-shadow: rgba(0, 0, 0, 0.2) 0 0 10px;
   border-bottom: 1px solid $gray;
@@ -49,13 +48,37 @@
   flex-direction: column;
   // gap: 10px;
   flex-grow: 1;
+
+  height: 51vh;
+  overflow: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: $brown transparent;
+
+  /* для Chrome/Edge/Safari */
+  &::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    // border-radius: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $brown;
+  }
+
+  @media screen and (min-width: $mobile) {
+    height: 52vh;
+  }
 }
 
 .bottom-wrap {
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -2px 10px;
   display: flex;
   justify-content: space-between;
   padding: 10px;
   align-items: center;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 5px;
 }

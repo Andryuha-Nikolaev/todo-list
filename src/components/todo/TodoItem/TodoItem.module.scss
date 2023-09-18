@@ -1,14 +1,14 @@
 @import '../../../scss/variables';
 
 .item {
-  border-bottom: 1px solid $gray;
+  border-bottom: 1px solid $light-gray;
   display: flex;
   align-items: center;
-  padding: 12px 10px 12px 0;
+  padding: 10px 10px 12px 0;
 }
 
 .text {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.2;
   word-wrap: break-word;
   width: calc(100% - 50px);
@@ -21,8 +21,8 @@
 
 .icon {
   align-self: flex-start;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   border: 1px solid $gray;
   flex-shrink: 0;
